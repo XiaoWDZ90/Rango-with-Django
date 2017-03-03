@@ -1,0 +1,23 @@
+
+
+
+
+$(document).ready(function() {
+		// JQuery code to be added in here.
+$("p").hover( function() { $(this).css('color', 'red');}, 
+function() {
+$(this).css('color', 'blue'); });
+$('#likes').click(function(){ var catid;
+catid = $(this).attr("data-catid");
+$.get('/rango/like/', {category_id: catid}, function(data){
+        $('#like_count').html(data);
+            $('#likes').hide();
+}); });
+
+
+
+
+
+
+
+		});
